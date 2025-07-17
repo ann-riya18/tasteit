@@ -1,3 +1,5 @@
+/* Reset & Base */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +46,7 @@ body {
   padding: 5px 10px;
   color: #fff;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: 0.15s ease;
 }
 .nav-links li a:hover {
   color: #ff7043;
@@ -72,7 +74,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: opacity 1.2s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
   z-index: 0;
   opacity: 0;
 }
@@ -110,7 +112,7 @@ body {
   color: white;
   font-weight: 500;
   border-radius: 6px;
-  transition: 0.3s ease;
+  transition: 0.15s ease;
   text-decoration: none;
 }
 .btn:hover {
@@ -180,7 +182,7 @@ body {
   font-size: 18px;
   color: #888;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.15s ease;
 }
 .actions i:hover {
   color: #ff7043;
