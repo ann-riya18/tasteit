@@ -5,17 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register | TasteIt</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: url('img/bg13.jpg') no-repeat center center/cover;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1506368249639-73a05d6f6488');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -23,104 +31,148 @@
     }
 
     .register-container {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 30px;
+      border-radius: 15px;
+      max-width: 420px;
       width: 100%;
-      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .register-container h2 {
-      font-weight: 700;
+      text-align: center;
+      color: #B0C364;
       margin-bottom: 30px;
-      color: #333;
-    }
-
-    .form-group label {
+      font-size: 24px;
       font-weight: 600;
-      float: left;
-      margin-bottom: 5px;
     }
 
-    .form-control {
-      border-radius: 10px;
-      padding: 10px;
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #B0C364;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 12px 40px 12px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #666;
     }
 
     .btn-register {
-      background-color: #ffc107;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: 600;
-      color: #000;
-      margin-top: 20px;
       width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #B0C364;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
     }
 
     .btn-register:hover {
-      background-color: #e0a800;
+      background-color: #98aa4f;
     }
 
     .login-link {
+      text-align: center;
       margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-link span {
+      color: #000;
     }
 
     .login-link a {
-      color: #007bff;
+      color: #b0c364;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: 500;
     }
 
     .login-link a:hover {
-      text-decoration: underline;
+      color: #b0c364;
     }
 
-    @media (max-width: 500px) {
-      .register-container {
-        padding: 30px 20px;
-      }
+    .form-icon {
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
 
   <div class="register-container">
-    <h2>Create Your Taste It Account</h2>
-    <form onsubmit="return validatePasswords()" action="register.php" method="POST">
-      <div class="form-group">
-        <label for="name"><i class="fa fa-user"></i> Full Name</label>
-        <input type="text" class="form-control" id="name" name="username" placeholder="Enter your name" required />
+    <h2>Create Your TasteIt Account</h2>
+    
+    <div class="form-group">
+      <label for="name"><i class="fas fa-user form-icon"></i> Full Name</label>
+      <div class="input-wrapper">
+        <input type="text" id="name" placeholder="Enter your name" required>
       </div>
-      <div class="form-group">
-        <label for="email"><i class="fa fa-envelope"></i> Email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email"><i class="fas fa-envelope form-icon"></i> Email</label>
+      <div class="input-wrapper">
+        <input type="email" id="email" placeholder="Enter your email" required>
       </div>
-      <div class="form-group">
-        <label for="password"><i class="fa fa-lock"></i> Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password"><i class="fas fa-lock form-icon"></i> Password</label>
+      <div class="input-wrapper">
+        <input type="password" id="password" placeholder="Create a password" required>
+        <i class="fas fa-eye toggle-password" toggle="#password"></i>
       </div>
-      <div class="form-group">
-        <label for="confirm-password"><i class="fa fa-lock"></i> Confirm Password</label>
-        <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required />
+    </div>
+
+    <div class="form-group">
+      <label for="confirm-password"><i class="fas fa-lock form-icon"></i> Confirm Password</label>
+      <div class="input-wrapper">
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        <i class="fas fa-eye toggle-password" toggle="#confirm-password"></i>
       </div>
-      <button type="submit" class="btn btn-register">Register</button>
-      <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
-    </form>
+    </div>
+
+    <button class="btn-register">Register</button>
+
+    <div class="login-link">
+      <span>Already have an account? </span><a href="user_login.html">Login</a>
+    </div>
   </div>
 
   <script>
-    function validatePasswords() {
-      var pass = document.getElementById('password').value;
-      var confirmPass = document.getElementById('confirm-password').value;
-      if (pass !== confirmPass) {
-        alert("Passwords do not match!");
-        return false;
-      }
-      return true;
-    }
+    const toggleIcons = document.querySelectorAll(".toggle-password");
+
+    toggleIcons.forEach(icon => {
+      icon.addEventListener("click", function () {
+        const target = document.querySelector(this.getAttribute("toggle"));
+        const type = target.getAttribute("type") === "password" ? "text" : "password";
+        target.setAttribute("type", type);
+      });
+    });
   </script>
 
 </body>

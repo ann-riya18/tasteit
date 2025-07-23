@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Login | Taste It</title>
 
+  <!-- Bootstrap & Font Awesome -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
@@ -17,41 +18,82 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0;
     }
 
     .form-box {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
+      background: rgba(255, 255, 255, 0.25);
+      padding: 40px 30px;
       border-radius: 20px;
       width: 100%;
       max-width: 400px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6px);
     }
 
     .form-box h2 {
       font-weight: 700;
       margin-bottom: 30px;
       text-align: center;
+      color:#b0c364;
     }
 
-    .form-box input {
-      margin-bottom: 15px;
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
     }
 
-    .form-box button {
-      background-color: #ffc107;
-      color: black;
+    .form-group label {
+      color: #b0c364;
       font-weight: 600;
-      border-radius: 30px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-control {
+      border: 1px solid #ccc;
+      padding: 10px 40px 10px 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group i {
+      position: absolute;
+      right: 15px;
+      top: 38px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .form-box button[type="submit"] {
+      background-color: #b0c364;
+      color: white;
+      font-weight: 600;
+      border: none;
       padding: 10px;
       width: 100%;
+      border-radius: 0px;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-box button[type="submit"]:hover {
+      background-color: #9eb254;
+      color: white;
     }
 
     .form-box a {
       display: block;
       text-align: center;
-      margin-top: 10px;
+      margin-top: 15px;
       font-size: 0.9rem;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .form-box a:hover {
+      color: #b0c364;
+      text-decoration: none; /* remove underline on hover */
     }
   </style>
 </head>
@@ -60,12 +102,30 @@
   <div class="form-box">
     <h2>Admin Login</h2>
     <form action="admin_login.php" method="POST">
-      <input type="email" name="email" class="form-control" placeholder="Admin Email" required>
-      <input type="password" name="password" class="form-control" placeholder="Password" required>
+      <div class="form-group">
+        <label for="email">Admin Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+        <i class="fas fa-eye" id="togglePassword"></i>
+      </div>
+
       <button type="submit">Login</button>
       <a href="login.html">← Back to Login Selection</a>
     </form>
   </div>
 
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassword.addEventListener('click', () => {
+      const isPassword = passwordField.getAttribute('type') === 'password';
+      passwordField.setAttribute('type', isPassword ? 'text' : 'password');
+    });
+  </script>
 </body>
 </html>
