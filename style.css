@@ -32,9 +32,9 @@ body {
   margin: auto;
 }
 .logo {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Poppins', sans-serif;
   font-size: 28px;
-  color: #D7263D;
+  color:#B0C364;
 }
 .nav-links {
   list-style: none;
@@ -49,7 +49,7 @@ body {
   transition: 0.15s ease;
 }
 .nav-links li a:hover {
-  color: #ff7043;
+  color:#B0C364;
 }
 
 /* Hero Slider */
@@ -108,7 +108,7 @@ body {
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #ff7043;
+  background-color:#B0C364;
   color: white;
   font-weight: 500;
   border-radius: 6px;
@@ -116,7 +116,7 @@ body {
   text-decoration: none;
 }
 .btn:hover {
-  background-color: #e65a2e;
+  background-color: #B0C364;
 }
 
 /* About Section */
@@ -128,7 +128,7 @@ body {
 .about h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #ff7043;
+  color:#B0C364;
 }
 .about p {
   max-width: 700px;
@@ -145,7 +145,7 @@ body {
   font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
-  color: #ff7043;
+  color: #B0C364;
 }
 .recipe-grid {
   display: grid;
@@ -185,7 +185,7 @@ body {
   transition: 0.15s ease;
 }
 .actions i:hover {
-  color: #ff7043;
+  color:#B0C364;
 }
 
 /* Footer */
@@ -205,5 +205,5 @@ footer p {
   transition: 0.3s ease;
 }
 .socials a:hover {
-  color: #ff7043;
+  color:#B0C364;
 }
